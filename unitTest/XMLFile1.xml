@@ -1,0 +1,390 @@
+﻿<!--
+test("Question DATE parsing test", () => {
+    /*
+    "indentInclude": "N",
+									    "xmlName": "datePrepared",
+									    "questionText": "Date Prepared *",
+									    "importStatus": "N",
+									    "colorBackgroundEnd": "209239245",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "maxCheck": "N",
+									    "displayLength": "10",
+									    "reportPrintStatus": "V",
+									    "responseRequired": "N",
+									    "visibleStatus": "Y",
+									    "hintTextStyle": "1",
+									    "questionName": "datePrepared",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "minCheck": "N",
+									    "colorBackgroundStart": "255255255",
+									    "hintInclude": "N",
+									    "questionTypeCode": "DATE",
+									    "key": "PIDS.82",
+									    "xmlParentName": "administrative",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000",
+									    "format": "0"
+    */
+});
+
+
+test("Question COMBOBOX parsing test", () => {
+    /*
+									    "defaultReset": "Y",
+									    "indentInclude": "N",
+									    "xmlName": "division",
+									    "questionText": "Division: *",
+									    "importStatus": "N",
+									    "colorBackgroundEnd": "209239245",
+									    "alignment": "0",
+									    "optionList": "",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "displayLength": "10",
+									    "reportPrintStatus": "V",
+									    "disabledClear": "Y",
+									    "responseRequired": "N",
+									    "visibleStatus": "Y",
+									    "optionSetKey": "PIDS.1",
+									    "hintTextStyle": "1",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "optionGroupKey": "3",
+									    "xmlOutputData": "C",
+									    "colorBackgroundStart": "255255255",
+									    "defaultStandard": "",
+									    "hintInclude": "N",
+									    "questionTypeCode": "COMBOBOX",
+									    "key": "PIDS.3",
+									    "xmlParentName": "administrative",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000"
+    */
+});
+
+test("Question CONTACT parsing test", () => {
+    /*
+									    "indentInclude": "N",
+									    "enableTitle": "Y",
+									    "xmlName": "leadReviewer",
+									    "lengthTitleName": "4",
+									    "enableEmail": "N",
+									    "questionText": "Lead Reviewer: *",
+									    "colorBackgroundEnd": "209239245",
+									    "importStatus": "N",
+									    "requireEmail": "Y",
+									    "lengthEmail": "50",
+									    "hintText": "",
+									    "enableEditorDialog": "Y",
+									    "lengthLastName": "25",
+									    "lengthFirstName": "15",
+									    "xmlOutputStatus": "E",
+									    "contactHeaderInclude": "Y",
+									    "reportPrintStatus": "V",
+									    "responseRequired": "Y",
+									    "lengthTitle": "50",
+									    "visibleStatus": "Y",
+									    "questionName": "leadReviewer",
+									    "hintTextStyle": "1",
+									    "requireTitle": "N",
+									    "hintDialogSize": "1",
+									    "labelTitle": "Occupation Title",
+									    "colorBackgroundStart": "255255255",
+									    "hintInclude": "N",
+									    "questionTypeCode": "CONTACT",
+									    "key": "PIDS.2",
+									    "lengthMiddleName": "15",
+									    "xmlParentName": "administrative",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000"
+    */
+});
+
+test("Question FILE_MULTI parsing test", () => {
+    /*
+									    "indentInclude": "N",
+									    "xmlName": "singleFileAttachment",
+									    "questionText": "File attachment",
+									    "itemRequired": "Y",
+									    "importStatus": "N",
+									    "colorBackgroundEnd": "209239245",
+									    "alignment": "1",
+									    "memoRequired": "N",
+									    "hintText": "",
+									    "enableEditorDialog": "Y",
+									    "xmlOutputStatus": "E",
+									    "reportPrintStatus": "V",
+									    "responseRequired": "N",
+									    "enableMemo": "Y",
+									    "visibleStatus": "Y",
+									    "hintTextStyle": "1",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "colorBackgroundStart": "255255255",
+									    "fileTypeFilter": "1",
+									    "hintInclude": "N",
+									    "questionTypeCode": "FILE_MULTI",
+									    "key": "PIDS.100",
+									    "labelText": "Details",
+									    "rowCount": "6",
+									    "xmlParentName": "administrative",
+									    "enabledStatus": "Y",
+									    "includeLabel": "Y",
+									    "colorForeground": "000000000",
+									    "format": "1"
+    */
+});
+
+
+test("Question HEADER parsing test", () => {
+    /*
+									    "indentInclude": "N",
+									    "hintDialogSize": "1",
+									    "questionText": "Product Code(s): *",
+									    "colorBackgroundEnd": "209239245",
+									    "colorBackgroundStart": "255255255",
+									    "hintInclude": "Y",
+									    "key": "PIDS.83",
+									    "questionTypeCode": "HEADER",
+									    "hintText": "prepopulate from Product Code(s) in CTS",
+									    "xmlOutputStatus": "N",
+									    "reportPrintStatus": "V",
+									    "colorForeground": "000000000",
+									    "visibleStatus": "Y",
+									    "hintTextStyle": "1"
+    */
+});
+
+test("Question TEXTAREA parsing test", () => {
+    /*
+                                        "indentInclude": "N",
+									    "xmlName": "deviceDescription",
+									    "questionText": "Device Description:",
+									    "sizeToForm": "N",
+									    "importStatus": "N",
+									    "colorBackgroundEnd": "209239245",
+									    "maxResponseLength": "99999",
+									    "enableEditorDialog": "Y",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "reportPrintStatus": "V",
+									    "responseRequired": "N",
+									    "visibleStatus": "Y",
+									    "hintTextStyle": "1",
+									    "questionName": "deviceDescription",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "colorBackgroundStart": "255255255",
+									    "hintInclude": "N",
+									    "questionTypeCode": "TEXTAREA",
+									    "key": "PIDS.15",
+									    "rowCount": "3",
+									    "xmlParentName": "background",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000"
+    */
+});
+
+test("Question NUMERIC parsing test", () => {
+    /*
+    "defaultReset": "Y",
+									    "indentInclude": "N",
+									    "xmlName": "sampleSize",
+									    "questionText": "Sample Size:",
+									    "importStatus": "N",
+									    "colorBackgroundEnd": "209239245",
+									    "maxResponseLength": "5",
+									    "exponentInclude": "N",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "maxCheck": "N",
+									    "displayLength": "10",
+									    "reportPrintStatus": "V",
+									    "disabledClear": "Y",
+									    "responseRequired": "N",
+									    "visibleStatus": "Y",
+									    "hintTextStyle": "1",
+									    "questionName": "sampleSize",
+									    "includeUnit": "N",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "optionGroupKey": "0",
+									    "minCheck": "N",
+									    "colorBackgroundStart": "255255255",
+									    "defaultStandard": "",
+									    "hintInclude": "N",
+									    "questionTypeCode": "NUMERIC",
+									    "key": "PIDS.24",
+									    "xmlParentName": "studyDesign",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000",
+									    "format": "0"
+    */
+});
+
+test("Question SPINNER parsing test", () => {
+    /*
+"indentInclude": "N",
+									    "hintDialogSize": "1",
+									    "xmlName": "studyArmsNumber",
+									    "colorCustom": "N",
+									    "questionText": "Number of Study Arms:",
+									    "maxValue": "9",
+									    "colorBackgroundEnd": "209239245",
+									    "importStatus": "N",
+									    "colorBackgroundStart": "255255255",
+									    "hintInclude": "N",
+									    "key": "PIDS.28",
+									    "questionTypeCode": "SPINNER",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "minValue": "0",
+									    "displayLength": "10",
+									    "stepSize": "1",
+									    "reportPrintStatus": "V",
+									    "xmlParentName": "studyDesign",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000",
+									    "visibleStatus": "Y",
+									    "questionName": "studyArmsNumber",
+									    "hintTextStyle": "1"
+    */
+});
+
+test("Question CHECKBOX_GROUP parsing test", () => {
+    /*
+"indentInclude": "N",
+									    "xmlName": "studyBlinding",
+									    "questionText": "Study Blinding (Check All That Apply):",
+									    "importStatus": "N",
+									    "colorBackgroundEnd": "209239245",
+									    "alignment": "0",
+									    "optionList": "",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "displayLength": "20",
+									    "reportPrintStatus": "V",
+									    "responseRequired": "N",
+									    "visibleStatus": "Y",
+									    "optionSetKey": "PIDS.6",
+									    "hintTextStyle": "1",
+									    "questionName": "studyBlinding",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "optionGroupKey": "3",
+									    "xmlOutputData": "C",
+									    "colorBackgroundStart": "255255255",
+									    "hintInclude": "N",
+									    "questionTypeCode": "CHECKBOX_GROUP",
+									    "key": "PIDS.32",
+									    "enableMultiLines": "N",
+									    "xmlParentName": "studyDesign",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000"
+    */
+});
+
+test("Question RADIO_GROUP parsing test", () => {
+    /*
+"defaultReset": "Y",
+									    "indentInclude": "N",
+									    "xmlName": "ousData",
+									    "questionText": "OUS Data?",
+									    "colorBackgroundEnd": "209239245",
+									    "importStatus": "N",
+									    "alignment": "0",
+									    "optionList": "",
+									    "hintText": "",
+									    "xmlOutputStatus": "E",
+									    "displayLength": "20",
+									    "reportPrintStatus": "V",
+									    "disabledClear": "Y",
+									    "responseRequired": "N",
+									    "visibleStatus": "Y",
+									    "optionSetKey": "PIDS.11",
+									    "hintTextStyle": "1",
+									    "questionName": "ousData",
+									    "hintDialogSize": "1",
+									    "colorCustom": "N",
+									    "optionGroupKey": "3",
+									    "xmlOutputData": "C",
+									    "colorBackgroundStart": "255255255",
+									    "defaultStandard": "",
+									    "hintInclude": "N",
+									    "questionTypeCode": "RADIO_GROUP",
+									    "key": "PIDS.33",
+									    "enableMultiLines": "N",
+									    "xmlParentName": "studyDesign",
+									    "enabledStatus": "Y",
+									    "colorForeground": "000000000"
+    */
+});-->
+<pids xmlns="http://www.w3.org/1999/xhtml">
+  <administrative>
+    <subjectId>abc 123</subjectId>
+    <supplementNumber />
+    <division>DAGID</division>
+    <branch />
+    <decision />
+    <premarketSubmission />
+  </administrative>
+  <background>
+    <sponsor />
+    <studyTitle />
+    <device />
+    <ProCode1 />
+    <proCode2 />
+    <proCode3 />
+    <deviceDescription />
+    <indicationsForUse />
+    <keyword1 />
+    <keyword2 />
+    <keyword3 />
+    <keyword4 />
+    <keyword5 />
+    <keyword6 />
+  </background>
+  <studyDesign>
+    <sampleSize />
+    <numberOfSites />
+    <studyArmsNumber />
+    <typeOfControl />
+    <controlArm />
+    <studyDuration />
+    <patientConsentDuration />
+    <followUpLength />
+    <keyInclusionCriteria />
+    <keyExclusionCriteria />
+  </studyDesign>
+  <safety>
+    <safetySuccessRuleOther />
+    <safetyStudyAlphaOther />
+    <safetyDelta />
+    <safetyPrimaryEndpoints />
+    <safetySecondaryEndpoints />
+    <safetyKeyDefinitions />
+  </safety>
+  <effectiveness>
+    <successRuleOther />
+    <alphaAllocationOther />
+    <delta />
+    <primaryEndpoints />
+    <secondaryEndpoints />
+    <keyDefinitions />
+  </effectiveness>
+  <statistics>
+    <primaryEffectiveExplanation />
+    <primarySafetyExplanation />
+    <interimAnalysisExplanation />
+    <secondSignificanceExplanation />
+    <type1ErrorExplanation />
+  </statistics>
+  <futureConcerns>
+    <postApprovalComment />
+    <newConcerns />
+    <unresolvedConcerns />
+    <otherComment />
+  </futureConcerns>
+</pids>

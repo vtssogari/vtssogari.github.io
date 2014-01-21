@@ -1,0 +1,207 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>eSubmitter Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+    </style>
+    <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+
+    <script src="/jquery-1.7.2.js"></script>
+    <script src="/template/util/Constants.js"></script>
+    <script src="/template/util/Util.js"></script>
+
+    <script src="/template/rule/Action.js"></script>
+    <script src="/template/rule/RuleEngine.js"></script>
+
+    <script src="/template/model/ModelLocator.js"></script>
+    <script src="/template/model/Question.js"></script>
+    <script src="/template/model/QuestionTypes.js"></script>
+    <script src="/template/model/TemplateModel.js"></script>
+    <script src="/template/model/OutlineNode.js"></script>
+    <script src="/template/model/Tab.js"></script>
+    <script src="/template/model/OrgOptionList.js"></script>
+
+    <script src="/template/model/questions/text/DocumentBasic.js"></script>
+    <script src="/template/model/questions/QuestionHTML.js"></script>
+    <script src="/template/model/questions/QuestionLabel.js"></script>
+    <script src="/template/model/questions/QuestionTextfield.js"></script>
+    <script src="/template/model/questions/QuestionComboBox.js"></script>
+    <script src="/template/model/questions/QuestionCheckBoxGroup.js"></script>
+    <script src="/template/model/questions/QuestionRadioGroup.js"></script>
+    <script src="/assets/js/jsrender.js"></script>
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+
+<script id="mainTemplate" type="text/x-jsrender">
+    {{for reportLayout.tab tmpl="#tabTemplate"/}}
+</script>
+
+<script id="tabTemplate" type="text/x-jsrender">
+<form>
+    {{for outlineNodeList tmpl="#nodeTemplate"/}}
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Save changes</button>
+      <button type="button" class="btn">Cancel</button>
+    </div>
+</form>
+</script>
+
+<script id="nodeTemplate" type="text/x-jsrender">
+  <fieldset>
+    <legend>{{>outlineNodePropertyList.nodeText}}</legend>
+    {{for questionList tmpl="#questionTemplate"/}}
+  </fieldset>
+</script>
+<script id="questionTemplate" type="text/x-jsrender">
+    {{if questionTypeCode === 'HTML'}}
+        {{include tmpl="#questionHTMLTemplate"/}}
+    
+    {{else questionTypeCode === 'HEADER'}}
+        {{include tmpl="#questionHeaderTemplate"/}}
+    {{else questionTypeCode === 'TEXTFIELD'}}
+        {{include tmpl="#questionTextFieldTemplate"/}}
+    {{else questionTypeCode === 'TEXTAREA'}}
+        {{include tmpl="#questionTextAreaTemplate"/}}
+    {{else questionTypeCode === 'COMBOBOX'}}
+        {{include tmpl="#questionComboBoxTemplate"/}}
+    {{else questionTypeCode === 'CHECKBOX_GROUP'}}
+        {{include tmpl="#questionCheckBoxGroupTemplate"/}}    
+    {{else questionTypeCode === 'RADIO_GROUP'}}
+        {{include tmpl="#questionRadioGroupTemplate"/}}      
+	{{else}}
+        <div class="alert">
+	    TODO:{{:questionTypeCode}}
+        </div>
+	{{/if}}
+</script>
+<script id="questionHTMLTemplate" type="text/x-jsrender">
+     <div class="well well-large">
+        {{:html}}
+     </div>
+</script>
+<script id="questionHeaderTemplate" type="text/x-jsrender">
+     <div class="well well-large">
+        {{>questionText}}
+     </div>
+</script>
+<script id="questionTextFieldTemplate" type="text/x-jsrender">
+     <label>{{>questionText}}</label>
+     <input type="text" placeholder="Type something…">
+     <span class="help-block">{{>hintText}}</span>
+</script>
+<script id="questionTextAreaTemplate" type="text/x-jsrender">
+     <label>{{>questionText}}</label>
+     <textarea rows="{{:json.rowCount}}" class="input-block-level"></textarea>
+     <span class="help-block">{{>hintText}}</span>
+</script>
+<script id="questionComboBoxTemplate" type="text/x-jsrender">
+     <label>{{>questionText}}</label>
+     <select>
+        {{for optionSet.itemList}}
+            <option>{{>text}}</option>
+        {{/for}}
+    </select>
+     <span class="help-block">{{>hintText}}</span>
+</script>
+<script id="questionCheckBoxGroupTemplate" type="text/x-jsrender">
+     <label>{{>questionText}}</label>
+     {{for optionSet.itemList}}
+        <label class="checkbox inline">
+            <input type="checkbox" id="{{:id}}" value="{{:code}}" onclick="doIt(this);"> {{>text}}
+        </label>
+     {{/for}}
+     <span class="help-block">{{>hintText}}</span>
+</script>
+<script id="questionRadioGroupTemplate" type="text/x-jsrender">
+    <label>{{>questionText}}</label>
+    {{for optionSet.itemList}}
+    <label class="radio">
+        <input type="radio" name="{{:#parent.parent.data.id}}" value="{{:code}}">
+        {{>text}}
+    </label>
+    {{/for}}
+     <span class="help-block">{{>hintText}}</span>
+</script>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="#">Project name</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <div id="content" class="span12">
+          
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>
